@@ -1,3 +1,4 @@
 .idea/
 venv/
 backend/client/__pycache__/
+backend/server/__pycache__/
