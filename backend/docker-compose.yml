@@ -1,0 +1,15 @@
+version: "3"
+
+services: 
+    server:
+      build: ./server
+      depends_on:
+        - redis
+    client:
+      build: ./client
+      depends_on:
+        - server
+    redis:
+      image: redis:6.0.6
+      ports: 
+        - 6379:6379
