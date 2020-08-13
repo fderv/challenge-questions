@@ -31,7 +31,6 @@ func (s *server) Add(ctx context.Context, in *pb.User) (*pb.Reply, error) {
 
 func main() {
 	lis, err := net.Listen("tcp", ":50051")
-	log.Printf("HEYYYAYAYAYAYAYAYAY:")
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
@@ -41,7 +40,6 @@ func main() {
 		Addr: "redis:6379",
 	})
 	
-	rClient.RPush(ctx, "userdata", "test")
 	
 	pb.RegisterUserServiceServer(s, &server{})
 	if err := s.Serve(lis); err != nil {
